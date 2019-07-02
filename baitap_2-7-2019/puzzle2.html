@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="a1.jpg" id="hinh1" onclick="doiAnh1()" alt="a1">
+<br>
+<img src="b2.jpg" id="hinh2" onclick="doiAnh2()" alt="b2">
+<br>
+<script>
+    let img1=document.getElementById("hinh1");
+    let img2=document.getElementById("hinh2");
+    function doiAnh1() {
+        if (img1.alt == 'a1'){
+            img1.alt = 'b1';
+        } else {
+            img1.alt = 'a1';
+            }
+        img1.src= ""+img1.alt + ".jpg";
+        check()
+    }
+    function doiAnh2() {
+        if (img2.alt == 'b2'){
+            img2.alt = 'a2';
+        } else{
+            img2.alt = 'b2';
+            }
+        img2.src= ""+img2.alt + ".jpg";
+        check()
+    }
+    function check() {
+        if (img1.alt == 'a1' && img2.alt == 'a2') {
+            alert("hoanthanh");
+        }
+        else if (img2.alt == "bl" && img2.alt == "b2") {
+            alert("hoan thanh");
+        }
+    }
+
+
+
+
+</script>
+</body>
+</html>
