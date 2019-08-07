@@ -1,72 +1,60 @@
 let operator = '';
-let giaTri1 = '';
-let giaTri2 = '';
-let resetManHinh = false;
-let luuGiaTri1 = true;
-let manHinh = document.getElementById("man_hinh");
-let giaTriMoi = '';
+let isValue1 = '';
+let isValue2 = '';
+let resetScreen = false;
+let saveValue1 = true;
+let screen = document.getElementById("screen");
 
-function clickNumber( number ) {
-
-    let giaTriCu = manHinh.value;
-
-    if (resetManHinh) {
-        giaTriMoi = number;
-        resetManHinh = false;
-    } else {
-        giaTriMoi = giaTriCu + number;
-    }
-    manHinh.value = giaTriMoi;
-
-    if (luuGiaTri1 == true) {
-        giaTri1 = giaTriMoi;
-    } else {
-        giaTri2 = giaTriMoi;
+function clickNumber( number) {
+    let oldValue = screen.value;
+    if (resetScreen){
+        screen.value = number;
+        resetScreen = false;
+    }else {
+        screen.value = oldValue + number;
     }
 
-    console.log('Giá trị 1: ', giaTri1, '; Giá trị 2: ', giaTri2);
 }
-
-function clickOperator( newOperator ) {
+function clickOperator(newOperator) {
     operator = newOperator;
-    resetManHinh = true;
-    luuGiaTri1 = false;
+    if (isValue1 == ""){
+        isValue1 = screen.value;
+    }else{
+        isValue2 = screen.value;
+    }
+    resetScreen = true;
+
 }
-
 function clickEqual() {
-    let ketQua = 0;
-
-    let so1 = Number(giaTri1);
-    let so2 = Number(giaTri2);
-
+    isValue2 = screen.value;
+    let result = 0;
+    let number1 = Number(isValue1);
+    let number2 = Number(isValue2);
     switch (operator) {
         case '+':
-            ketQua = so1 + so2;
+            result = number1 + number2;
             break;
         case '-':
-            ketQua = so1 - so2;
+            result = number1 - number2;
             break;
         case '*':
-            ketQua = so1 * so2;
+            result = number1 * number2;
             break;
         case '/':
-            ketQua = so1 / so2;
+            result = number1 / number2;
             break;
-
     }
-
-    manHinh.value = ketQua;
-
+    screen.value = result;
     operator = '';
-    resetManHinh = true;
-    giaTri1 = ketQua;
-    giaTri2 = '';
-    luuGiaTri1 = false;
+    resetScreen = true;
+    isValue1 = result;
+    isValue2 = '';
+    saveValue1 = false;
 }
-function nutXoa() {
-    manHinh.value= "";
+function delKey() {
+    screen.value = "";
     operator = '';
-    giaTri1 = '';
-    giaTri2 = '';
-
+    isValue1 = '';
+    isValue2 = '';
+    resetScreen = true;
 }
