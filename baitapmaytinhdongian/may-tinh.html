@@ -2,36 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>May_Tinh</title>
+    <title>maytinh</title>
+
 </head>
 <body>
-<input type="text" id="man_hinh" style="text-align: right;" />
+
+        <input type="text"  id = "screen"style="height: 50px; width: 400px"/>
 <table>
-<table>
-    <button id="btn1" onclick="clickNumber(this.value)" value="1">1</button>
-    <button id="btn2" onclick="clickNumber(this.value)" value="2">2</button>
-    <button id="btn3" onclick="clickNumber(this.value)" value="3">3</button>
-    <button id="btnCong" onclick="clickOperator(this.value)" value="+">+</button>
+    <table>
+
+        <button  onclick="clickNumber(this.value)" value="1"style="width: 100px; height: 40px" >1</button>
+        <button  onclick="clickNumber(this.value)" value="2" style="width: 100px; height: 40px">2</button>
+        <button  onclick="clickNumber(this.value)" value="3" style="width: 100px; height: 40px">3</button>
+        <button  onclick="clickOperator(this.value)" value="+" style="width: 100px; height: 40px">+</button>
+    </table>
+    <table>
+        <button  onclick="clickNumber(this.value)" value="4" style="width: 100px; height: 40px">4</button>
+        <button  onclick="clickNumber(this.value)" value="5" style="width: 100px; height: 40px">5</button>
+        <button  onclick="clickNumber(this.value)" value="6"style="width: 100px; height: 40px">6</button>
+        <button  onclick="clickOperator(this.value)" value="-"style="width: 100px; height: 40px">-</button>
+    </table>
+    <table>
+        <button  onclick="clickNumber(this.value)" value="7" style="width: 100px; height: 40px">7</button>
+        <button  onclick="clickNumber(this.value)" value="8"style="width: 100px; height: 40px">8</button>
+        <button  onclick="clickNumber(this.value)" value="9"style="width: 100px; height: 40px">9</button>
+        <button  onclick="clickOperator(this.value)" value="*" style="width: 100px; height: 40px">*</button>
+    </table>
+    <table>
+        <button  onclick="delKey()" value="C" style="width: 100px; height: 40px">C</button>
+        <button  onclick="clickNumber(this.value)" value="0" style="width: 100px; height: 40px">0</button>
+        <button onclick="clickEqual()"style="width: 100px; height: 40px">=</button>
+        <button  onclick="clickOperator(this.value)" value="/" style="width: 100px; height: 40px">/</button>
+    </table>
 </table>
-<table>
-    <button id="btn4" onclick="clickNumber(this.value)" value="4">4</button>
-    <button id="btn5" onclick="clickNumber(this.value)" value="5">5</button>
-    <button id="btn6" onclick="clickNumber(this.value)" value="6">6</button>
-    <button id="btnTru" onclick="clickOperator(this.value)" value="-">-</button>
-</table>
-<table>
-    <button id="btn7" onclick="clickNumber(this.value)" value="7">7</button>
-    <button id="btn8" onclick="clickNumber(this.value)" value="8">8</button>
-    <button id="btn9" onclick="clickNumber(this.value)" value="9">9</button>
-    <button id="btnNhan" onclick="clickOperator(this.value)" value="*">*</button>
-</table>
-<table>
-    <button id="c" onclick="nutXoa() " value="c">c</button>
-    <button id="btn0" onclick="clickNumber(this.value)" value="0">0</button>
-    <button id="btnBang" onclick="clickEqual()">=</button>
-    <button id="btnChia" onclick="clickOperator(this.value)" value="/">/</button>
-</table>
-</table>
-<script src="mayTinh.js"></script>
+<script src="calculator.js"></script>
 </body>
 </html>
